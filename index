@@ -1,0 +1,559 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Adaptive Study Deck</title>
+<style>
+:root{--bg:#10131c;--card:#191e2b;--line:#313a4f;--text:#eee7d8;--muted:#8d96aa;--accent:#e0a458;--bad:#cf6152;--good:#4fb080}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Georgia,serif;line-height:1.45}
+.top{height:3px;background:linear-gradient(90deg,#6d5ae0,#35b0c9,#4fb87a,#e0a458,#d9694e)}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 50px}
+h1{font-size:32px;margin:10px 0 2px}
+h2{margin:10px 0}
+button{font:inherit;color:inherit;background:none;border:0}
+.hidden{display:none!important}
+.meta,.small{font-family:Menlo,monospace;color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.panel,.tile,.row,.btn{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left}
+.tile h3{margin:0 0 8px}
+.row{display:flex;gap:12px;align-items:center;margin:8px 0;width:100%}
+.idx{font-family:Menlo,monospace;color:var(--muted);width:42px}
+.grow{flex:1}
+.badge{font-family:Menlo,monospace;font-size:10px;color:var(--accent)}
+.actions{display:grid;gap:8px;margin-top:12px}
+.two{grid-template-columns:1fr 1fr}
+.three{grid-template-columns:1fr 1fr 1fr}
+.btn{text-align:center}
+.primary{background:var(--accent);color:#1b1308;font-weight:bold}
+.back{font-family:Menlo,monospace;color:var(--muted);padding:10px 0}
+.sect{font-family:Menlo,monospace;color:#636c80;font-size:11px;text-transform:uppercase;letter-spacing:.15em;margin:20px 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;min-height:320px;padding:22px;margin:12px 0}
+.tag{font-family:Menlo,monospace;color:#636c80;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.q{font-size:25px;margin:28px 0 16px}
+.a{font-size:18px;color:#d8d3c7;border-top:1px solid var(--line);padding-top:16px}
+.rail{height:3px;background:var(--line);border-radius:4px;overflow:hidden;margin:10px 0}
+.rail span{display:block;background:var(--accent);height:100%;width:0}
+textarea{width:100%;min-height:90px;background:#0b0e15;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;font:inherit}
+.good{color:var(--good)}.bad{color:var(--bad)}
+#exportBox{height:420px;font-family:Menlo,monospace;font-size:11px;width:100%}
+.debug{white-space:pre-wrap;color:#d9694e;font-family:Menlo,monospace;font-size:11px;margin-top:12px}
+@media(max-width:540px){.grid,.stats{grid-template-columns:1fr}.three{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+
+<noscript><div class="panel">JavaScript is blocked. This app needs JavaScript.</div></noscript>
+
+<section id="home">
+  <h1>Study Deck</h1>
+  <div class="meta">adaptive deck · GitHub Pages version</div>
+
+  <div class="stats">
+    <div class="panel"><b id="statMaster">-</b><div class="meta">mastered</div></div>
+    <div class="panel"><b id="statToday">-</b><div class="meta">today</div></div>
+    <div class="panel"><b id="statCards">-</b><div class="meta">cards</div></div>
+  </div>
+
+  <div class="actions two">
+    <button class="btn" id="profileBtn">Profile</button>
+    <button class="btn" id="exportBtn">Export metadata</button>
+  </div>
+
+  <div class="sect">Subjects</div>
+  <div id="subjects" class="grid"><div class="panel">Loading subjects...</div></div>
+  <div id="debug" class="debug"></div>
+</section>
+
+<section id="subject" class="hidden">
+  <button class="back" id="backHome">← Subjects</button>
+  <h2 id="subjectTitle"></h2>
+  <div id="classes"></div>
+</section>
+
+<section id="study" class="hidden">
+  <button class="back" id="backClasses">← Classes</button>
+  <div class="meta" id="studyLoc"></div>
+  <div class="rail"><span id="bar"></span></div>
+
+  <div class="card">
+    <div class="tag" id="cardTag"></div>
+    <div class="q" id="cardQ"></div>
+    <div class="a hidden" id="cardA"></div>
+    <div id="answerWrap" class="hidden">
+      <textarea id="answerInput" placeholder="Type what you remember..."></textarea>
+    </div>
+    <div class="small" id="hint"></div>
+  </div>
+
+  <div id="studyActions"></div>
+
+  <div id="feedback" class="panel hidden">
+    <div class="sect" style="margin-top:0">Information feedback</div>
+    <div class="actions three">
+      <button class="btn feed" data-feed="useful">Useful</button>
+      <button class="btn feed" data-feed="too_random">Too random</button>
+      <button class="btn feed" data-feed="need_context">Need context</button>
+      <button class="btn feed" data-feed="need_example">Need example</button>
+      <button class="btn feed" data-feed="worth_deeper">Worth deeper</button>
+      <button class="btn feed" data-feed="too_shallow">Too shallow</button>
+    </div>
+  </div>
+
+  <div class="small" id="status"></div>
+</section>
+
+<section id="done" class="hidden">
+  <div class="sect" id="doneMark"></div>
+  <h2 id="doneTitle"></h2>
+  <p class="small" id="doneBody"></p>
+  <div class="actions">
+    <button class="btn primary" id="continueBtn">Continue</button>
+    <button class="btn" id="doneClasses">Back to classes</button>
+  </div>
+</section>
+
+<section id="profile" class="hidden">
+  <button class="back" id="profileBack">← Home</button>
+  <h2>Learning Profile</h2>
+  <div id="profileBody"></div>
+</section>
+
+<section id="export" class="hidden">
+  <button class="back" id="exportBack">← Home</button>
+  <h2>Metadata Export</h2>
+  <p class="small">Copy this and paste it back into ChatGPT to improve future decks.</p>
+  <textarea id="exportBox"></textarea>
+  <div class="actions two">
+    <button class="btn primary" id="copyBtn">Copy</button>
+    <button class="btn" id="refreshBtn">Refresh</button>
+  </div>
+  <div class="small" id="copyStatus"></div>
+</section>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var APP_KEY = "study.deck.github.v1";
+var PHASES = ["learn","test","hard","master"];
+var TIME_WEIGHT = 0.06;
+var INTERRUPT_MS = 45000;
+
+var SEEDS = {
+"Optics & Light":{
+domain:"science",use:"photography and visual literacy",interests:["photography","light","visual culture","field observation"],
+base:[
+["What is light?","Electromagnetic radiation that can travel through a vacuum.","definition","foundation","waves"],
+["What is refraction?","Bending of light as it changes speed between media.","definition","mechanism","light behavior"],
+["Snell's law?","n1 sin(theta1) = n2 sin(theta2).","formula","core principle","lenses"],
+["Why is the sky blue?","Rayleigh scattering redirects shorter blue wavelengths across the sky.","cause-effect","mechanism","color"],
+["What does a polarizer do?","It transmits one polarization direction and blocks others.","application","application","photography"]
+]},
+"Mathematics":{
+domain:"mathematics",use:"technical calculation and design tools",interests:["geometry","architecture","measurement","design"],
+base:[
+["Pythagorean theorem?","a^2 + b^2 = c^2 for a right triangle.","formula","core principle","geometry"],
+["Quadratic formula?","x = (-b plus or minus sqrt(b^2 - 4ac)) / 2a.","formula","core principle","algebra"],
+["What does a derivative represent?","Instantaneous rate of change or slope of a curve.","definition","mental model","calculus"],
+["What is the golden ratio?","Phi is about 1.618, a proportion where a/b = (a+b)/a.","definition","design principle","proportion"],
+["What is slope?","Rise over run; vertical change divided by horizontal change.","definition","core principle","geometry"]
+]},
+"Astronomy":{
+domain:"science",use:"cosmic orientation and observation",interests:["navigation","cosmos","scale","field observation"],
+base:[
+["What is a light-year?","The distance light travels in one year.","definition","foundation","cosmology"],
+["Order of planets from the Sun?","Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.","sequence","foundation","planets"],
+["What is redshift?","Stretching of light to longer wavelengths.","definition","mechanism","cosmology"],
+["What powers a main-sequence star?","Hydrogen fusion in the core.","cause-effect","mechanism","stars"],
+["Kepler's first law?","Planets orbit in ellipses with the Sun at one focus.","definition","core principle","motion"]
+]},
+"Spanish":{
+domain:"language",use:"conversation and travel",interests:["daily speech","travel","conversation","field use"],
+base:[
+["How do you say hello?","Hola.","translation","vocabulary","daily speech"],
+["How do you ask how are you?","Como estas?","translation","application","conversation"],
+["Ser vs estar?","Ser is identity or essence; estar is state or location.","comparison","core principle","grammar"],
+["How do you say I have to work?","Tengo que trabajar.","translation","application","daily speech"],
+["Por vs para?","Por = cause or means; para = purpose or destination.","comparison","core principle","grammar"]
+]},
+"Latin":{
+domain:"language",use:"translation and historical literacy",interests:["ancient world","Roman","translation","grammar"],
+base:[
+["Six Latin cases?","Nominative, genitive, dative, accusative, ablative, vocative.","list","foundation","cases"],
+["Conjugate sum, present?","sum, es, est, sumus, estis, sunt.","conjugation","core principle","verbs"],
+["Translate carpe diem.","Seize the day.","translation","named example","phrases"],
+["What is an ablative absolute?","A noun plus participle in the ablative giving circumstance.","definition","advanced","grammar"],
+["Translate puer puellam amat.","The boy loves the girl.","translation","application","translation"]
+]},
+"Cuneiform":{
+domain:"ancient writing",use:"ancient-world literacy",interests:["Mesopotamia","ancient writing","clay","scribes"],
+base:[
+["What is cuneiform?","A wedge-shaped writing system pressed into clay.","definition","foundation","writing"],
+["Where did cuneiform begin?","Sumer in southern Mesopotamia.","fact","origin","writing"],
+["Around when did cuneiform begin?","Around 3200 BCE.","date","timeline anchor","writing"],
+["What tool made cuneiform signs?","A reed stylus.","fact","material","craft"],
+["Was cuneiform an alphabet?","No, it was logo-syllabic.","comparison","core principle","writing"]
+]},
+"History":{
+domain:"history",use:"historical orientation",interests:["empire","warfare","trade routes","world systems"],
+base:[
+["When did the Western Roman Empire fall?","476 CE.","date","timeline anchor","empire"],
+["What was the Silk Road?","A network linking China, Central Asia, and the Mediterranean.","definition","connector","trade routes"],
+["What was the Pax Mongolica?","Relative stability across Mongol-controlled Eurasia.","definition","connector","empire"],
+["Who was Genghis Khan?","Founder of the Mongol Empire.","person","named example","empire"],
+["What was the Columbian Exchange?","Transfer of plants, animals, people, and disease after 1492.","definition","mechanism","world systems"]
+]},
+"Philosophy":{
+domain:"philosophy",use:"judgment and life philosophy",interests:["ethics","character","discipline","judgment"],
+base:[
+["What is epistemology?","The study of knowledge.","definition","foundation","knowledge"],
+["What is ethics?","The study of right action and the good life.","definition","foundation","ethics"],
+["Plato's Theory of Forms?","True reality is perfect abstract Forms; physical things are imperfect copies.","definition","core principle","knowledge"],
+["Aristotle's virtue ethics?","Ethics based on forming character and pursuing flourishing.","definition","life philosophy","ethics"],
+["What is Occam's razor?","Prefer the explanation with fewer unnecessary assumptions.","definition","mental model","logic"]
+]},
+"Architecture":{
+domain:"architecture",use:"design literacy and field observation",interests:["architecture","craft","sacred space","material intelligence"],
+base:[
+["Vitruvius' three qualities?","Firmitas, utilitas, venustas: strength, function, beauty.","list","foundation","design theory"],
+["What defines Gothic structure?","Pointed arches, ribbed vaults, and flying buttresses.","list","named example","structure"],
+["Who built Florence Cathedral's dome?","Filippo Brunelleschi.","person","named example","structure"],
+["What made the Pantheon possible?","Roman concrete, arches, and dome engineering.","cause-effect","mechanism","materials"],
+["What is adaptive reuse?","Reusing an existing building for a new purpose.","definition","application","urbanism"]
+]},
+"Art History":{
+domain:"art history",use:"visual analysis",interests:["visual culture","aesthetic judgment","craft","sacred art"],
+base:[
+["What defines Renaissance painting?","Perspective, anatomy, classical themes, and naturalism.","list","foundation","style"],
+["What is chiaroscuro?","Strong light-dark contrast to model form.","definition","technique","technique"],
+["Who painted the Mona Lisa?","Leonardo da Vinci.","person","named example","style"],
+["What is Impressionism?","Painting fleeting light with loose visible brushwork.","definition","style","style"],
+["What is patronage?","Support of artists by rulers, churches, or wealthy clients.","definition","mechanism","patronage"]
+]}
+};
+
+function E(id){return document.getElementById(id)}
+function show(id){
+  ["home","subject","study","done","profile","export"].forEach(function(x){E(x).classList.add("hidden")});
+  E(id).classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function day(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+function cycle(a,i){return a[i%a.length]}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function chunk(ids){var out=[],i=0;while(i<ids.length){var left=ids.length-i;var size=left<=17?left:17;out.push(ids.slice(i,i+size));i+=size}return out}
+function era(subject,i){
+  if(subject==="Spanish"||subject==="Mathematics"||subject==="Optics & Light")return"timeless";
+  if(subject==="Cuneiform")return"ancient";
+  if(subject==="Latin")return"classical";
+  return cycle(["ancient","classical","medieval","renaissance","early modern","modern"],i);
+}
+function variant(q,a,r){
+  var pre=["","Core recall: ","Why it matters: ","Field use: ","Contrast check: ","Memory anchor: ","Quick test: ","Foundation check: ","Useful recall: ","Long-term anchor: "][r]||"";
+  var suf=["",""," This anchors later understanding."," Use this to recognize real examples."," Keep it distinct from nearby concepts."," Treat this as a long-term anchor."," Recall it quickly and cleanly."," This is a foundation card."," This is useful beyond the card itself."," Keep this available for future decks."][r]||"";
+  return [pre+q,a+suf];
+}
+function makeCard(subject,seed,i){
+  var b=seed.base[i%seed.base.length];
+  var r=Math.floor(i/seed.base.length);
+  var va=variant(b[0],b[1],r);
+  var type=b[2],role=b[3],theme=b[4];
+  var high=["core principle","foundation","mechanism","mental model","application","design principle"].indexOf(role)>=0;
+  return{
+    id:slug(subject)+"-"+String(i+1).padStart(3,"0"),
+    subject:subject,
+    q:va[0],
+    a:va[1],
+    learningType:type,
+    answerStyle:type==="formula"?"formula":type==="translation"?"translation":"short explanation",
+    content:{
+      domain:seed.domain,
+      era:era(subject,i),
+      region:subject==="Cuneiform"?"Mesopotamia":subject==="Latin"?"Mediterranean":"global",
+      theme:theme,
+      subtheme:theme,
+      contentRole:role,
+      practicalValue:seed.use,
+      interestVector:seed.interests.concat([theme,role]),
+      memoryHook:va[1].split(/[.;]/)[0]
+    },
+    learningValue:{
+      usefulness:high?"high":"medium",
+      depthLevel:i<25?"foundation":i<60?"intermediate":i<85?"advanced":"deep review",
+      knowledgeRole:role,
+      transferValue:high?"high":"medium",
+      realWorldUse:[seed.use],
+      expansionPotential:["History","Architecture","Philosophy","Cuneiform","Art History"].indexOf(subject)>=0?"high":"medium",
+      retentionWorthiness:high?"essential":"useful",
+      studyPriority:high?5:3
+    },
+    difficulty:i<25?1:i<60?2:i<85?3:4,
+    tags:[subject,theme,type,role]
+  };
+}
+
+var CARDS=[];
+Object.keys(SEEDS).forEach(function(subject){
+  for(var i=0;i<100;i++)CARDS.push(makeCard(subject,SEEDS[subject],i));
+});
+
+var BY_ID={},SUBJECTS=[],CLASSES=[],CLASS_BY_ID={};
+CARDS.forEach(function(c){BY_ID[c.id]=c});
+Object.keys(SEEDS).forEach(function(subject){
+  var ids=CARDS.filter(function(c){return c.subject===subject}).map(function(c){return c.id});
+  var classIds=[];
+  chunk(ids).forEach(function(cardIds,i){
+    var id=slug(subject)+"-class-"+(i+1);
+    var cl={id:id,subject:subject,index:i,cardIds:cardIds};
+    CLASSES.push(cl);CLASS_BY_ID[id]=cl;classIds.push(id);
+  });
+  SUBJECTS.push({subject:subject,classIds:classIds});
+});
+
+var STATE;
+try{STATE=JSON.parse(localStorage.getItem(APP_KEY)||"{}")}catch(e){STATE={}}
+STATE.classes=STATE.classes||{};
+STATE.cards=STATE.cards||{};
+STATE.events=STATE.events||[];
+STATE.meta=STATE.meta||{};
+
+function save(){localStorage.setItem(APP_KEY,JSON.stringify(STATE))}
+function classState(id){if(!STATE.classes[id])STATE.classes[id]={phase:"learn"};return STATE.classes[id]}
+function cardState(id){
+  if(!STATE.cards[id])STATE.cards[id]={seen:0,views:0,got:0,missed:0,feedback:{},interruptions:0,totalCleanMs:0,cleanViews:0,avgCleanMs:0,masteryScore:0,interestScore:.5,informationScore:.5};
+  return STATE.cards[id];
+}
+function phase(id){return classState(id).phase||"learn"}
+function setPhase(id,p){classState(id).phase=p;save()}
+function nextPhase(p){return PHASES[Math.min(PHASES.length-1,PHASES.indexOf(p)+1)]}
+function log(type,data){STATE.events.push(Object.assign({type:type,at:Date.now()},data||{}));if(STATE.events.length>1000)STATE.events=STATE.events.slice(-1000);save()}
+function reviewCount(){var d=day();if(STATE.meta.day!==d){STATE.meta.day=d;STATE.meta.today=0}STATE.meta.today++;save()}
+
+var currentSubject=null,session=null;
+
+function renderHome(){
+  E("statCards").textContent=CARDS.length;
+  E("statMaster").textContent=CLASSES.filter(function(c){return phase(c.id)==="master"}).length+" / "+CLASSES.length;
+  E("statToday").textContent=STATE.meta.day===day()?(STATE.meta.today||0):0;
+  var wrap=E("subjects");wrap.innerHTML="";
+  SUBJECTS.forEach(function(s){
+    var mastered=s.classIds.filter(function(id){return phase(id)==="master"}).length;
+    var b=document.createElement("button");
+    b.className="tile";
+    b.innerHTML="<h3>"+s.subject+"</h3><div class='meta'>"+s.classIds.length+" classes · 100 cards · "+mastered+" mastered</div>";
+    b.onclick=function(){openSubject(s.subject)};
+    wrap.appendChild(b);
+  });
+  E("debug").textContent="Loaded "+SUBJECTS.length+" subjects / "+CARDS.length+" cards";
+}
+function openSubject(subject){
+  currentSubject=subject;
+  E("subjectTitle").textContent=subject;
+  var s=SUBJECTS.find(function(x){return x.subject===subject});
+  var wrap=E("classes");wrap.innerHTML="";
+  s.classIds.forEach(function(id,i){
+    var cl=CLASS_BY_ID[id];
+    var row=document.createElement("button");
+    row.className="row";
+    row.innerHTML="<div class='idx'>"+String(i+1).padStart(2,"0")+"</div><div class='grow'><b>Class "+(i+1)+"</b><div class='meta'>"+cl.cardIds.length+" cards</div></div><div class='badge'>"+phase(id)+"</div>";
+    row.onclick=function(){startClass(id)};
+    wrap.appendChild(row);
+  });
+  show("subject");
+}
+function startClass(id){
+  var cl=CLASS_BY_ID[id];
+  var p=phase(id);
+  if(p==="master")p="hard";
+  session={classId:id,subject:cl.subject,index:cl.index,mode:p,queue:p==="learn"?cl.cardIds.slice():shuffle(cl.cardIds),total:cl.cardIds.length,passed:0,state:"front",currentId:null,startedAt:0};
+  log("class_started",{classId:id,subject:cl.subject,mode:p});
+  show("study");
+  renderCard();
+}
+function renderCard(){
+  if(!session||session.queue.length===0)return finishClass();
+  var id=session.queue[0],c=BY_ID[id];
+  session.currentId=id;session.startedAt=Date.now();session.state="front";
+  var st=cardState(id);st.views++;st.seen++;
+  E("studyLoc").textContent=session.subject+" · Class "+(session.index+1)+" · "+session.mode;
+  E("bar").style.width=(session.passed/session.total*100)+"%";
+  E("cardTag").textContent=c.learningType+" · "+c.content.subtheme+" · "+c.learningValue.knowledgeRole;
+  E("cardQ").textContent=c.q;
+  E("cardA").textContent=c.a;
+  E("cardA").classList.add("hidden");
+  E("answerWrap").classList.add("hidden");
+  E("feedback").classList.add("hidden");
+  E("hint").textContent="";
+  E("answerInput").value="";
+  E("status").textContent="";
+  if(session.mode==="learn"){
+    E("cardA").classList.remove("hidden");
+    E("studyActions").innerHTML="<button class='btn primary' id='nextBtn'>Next</button>";
+    E("nextBtn").onclick=learnNext;
+  }else if(session.mode==="test"){
+    E("hint").textContent="Tap Reveal, then mark got/missed.";
+    E("studyActions").innerHTML="<button class='btn primary' id='revealBtn'>Reveal</button>";
+    E("revealBtn").onclick=reveal;
+  }else{
+    E("answerWrap").classList.remove("hidden");
+    E("studyActions").innerHTML="<button class='btn primary' id='checkBtn'>Check answer</button>";
+    E("checkBtn").onclick=checkHard;
+    setTimeout(function(){E("answerInput").focus()},50);
+  }
+  save();
+}
+function timing(label){
+  if(!session||!session.currentId)return;
+  var ms=Date.now()-session.startedAt;
+  var st=cardState(session.currentId);
+  if(ms>INTERRUPT_MS){st.interruptions++;log("possible_interruption",{cardId:session.currentId,ms:ms,label:label})}
+  else{st.totalCleanMs+=ms;st.cleanViews++;st.avgCleanMs=st.totalCleanMs/st.cleanViews}
+  save();
+}
+function learnNext(){timing("learn_next");session.queue.shift();session.passed++;renderCard()}
+function reveal(){
+  if(!session||session.state!=="front")return;
+  timing("reveal");
+  session.state="back";
+  E("cardA").classList.remove("hidden");
+  E("feedback").classList.remove("hidden");
+  E("studyActions").innerHTML="<div class='actions two'><button class='btn bad' id='missBtn'>Missed</button><button class='btn good' id='gotBtn'>Got it</button></div>";
+  E("missBtn").onclick=function(){grade("miss")};
+  E("gotBtn").onclick=function(){grade("got")};
+}
+var STOP={};"the a an of to in on is are was and or for with as at by it its that this from be he she they you i we".split(" ").forEach(function(w){STOP[w]=true});
+function words(s){return String(s).toLowerCase().replace(/[^a-z0-9\s]/g," ").split(/\s+/).filter(function(w){return w.length>2&&!STOP[w]})}
+function checkHard(){
+  if(!session||session.state!=="front")return;
+  timing("answer_checked");
+  session.state="back";
+  var c=BY_ID[session.currentId],u={},key=words(c.a),hit=0;
+  words(E("answerInput").value).forEach(function(w){u[w]=true});
+  key.forEach(function(w){if(u[w])hit++});
+  var ratio=key.length?hit/key.length:0;
+  E("answerWrap").classList.add("hidden");
+  E("cardA").classList.remove("hidden");
+  E("feedback").classList.remove("hidden");
+  E("studyActions").innerHTML="<div class='small'>"+(ratio>=.4?"Looks close. Verify below.":"Compare with the answer.")+"</div><div class='actions two'><button class='btn bad' id='missBtn'>Missed it</button><button class='btn good' id='gotBtn'>Got it</button></div>";
+  E("missBtn").onclick=function(){grade("miss")};
+  E("gotBtn").onclick=function(){grade("got")};
+}
+function infoScore(c,st){
+  var f=st.feedback||{},high=c.learningValue.usefulness==="high";
+  var score=high?.78:.58;
+  score+=(f.useful||0)*.04+(f.worth_deeper||0)*.05-(f.too_random||0)*.07-(f.too_shallow||0)*.04;
+  return Math.max(0,Math.min(1,score));
+}
+function interestScore(c,st){
+  var f=st.feedback||{},score=.45;
+  score+=(f.useful||0)*.05+(f.worth_deeper||0)*.08-(f.too_random||0)*.08;
+  if(st.avgCleanMs&&st.avgCleanMs>9000&&st.interruptions===0)score+=TIME_WEIGHT;
+  return Math.max(0,Math.min(1,score));
+}
+function grade(result){
+  if(!session||session.state!=="back")return;
+  var id=session.queue.shift(),c=BY_ID[id],st=cardState(id);
+  reviewCount();
+  if(result==="got"){session.passed++;st.got++}
+  else{st.missed++;session.queue.splice(Math.min(session.queue.length,2),0,id)}
+  var total=st.got+st.missed;
+  st.masteryScore=total?st.got/total:0;
+  st.informationScore=infoScore(c,st);
+  st.interestScore=interestScore(c,st);
+  log(result==="got"?"graded_got":"graded_missed",{cardId:id,subject:c.subject,mode:session.mode});
+  save();
+  renderCard();
+}
+function feed(type){
+  if(!session||!session.currentId)return;
+  var c=BY_ID[session.currentId],st=cardState(session.currentId);
+  st.feedback[type]=(st.feedback[type]||0)+1;
+  st.informationScore=infoScore(c,st);
+  st.interestScore=interestScore(c,st);
+  log("feedback_"+type,{cardId:c.id,subject:c.subject});
+  save();
+  E("status").textContent="feedback saved: "+type.replace(/_/g," ");
+}
+function finishClass(){
+  var cl=CLASS_BY_ID[session.classId];
+  var np=nextPhase(session.mode);
+  if(PHASES.indexOf(np)>PHASES.indexOf(phase(cl.id)))setPhase(cl.id,np);
+  E("doneMark").textContent=session.mode==="learn"?"Learn complete":session.mode==="test"?"Test complete":"Class mastered";
+  E("doneTitle").textContent="Class "+(cl.index+1)+" complete";
+  E("doneBody").textContent=session.mode==="learn"?"Next is test mode.":session.mode==="test"?"Next is hard mode.":"Move to the next class.";
+  E("continueBtn").onclick=function(){
+    if(session.mode==="hard"){
+      var s=SUBJECTS.find(function(x){return x.subject===cl.subject});
+      var next=s.classIds[cl.index+1];
+      if(next)startClass(next);else openSubject(cl.subject);
+    }else startClass(cl.id);
+  };
+  E("doneClasses").onclick=function(){openSubject(cl.subject)};
+  show("done");
+}
+function profileData(){
+  var by={},vectors={},weak={};
+  CARDS.forEach(function(c){
+    var st=cardState(c.id);
+    st.informationScore=infoScore(c,st);
+    st.interestScore=interestScore(c,st);
+    if(!by[c.subject])by[c.subject]={seen:0,got:0,missed:0,interest:0,info:0,count:0};
+    var b=by[c.subject];
+    b.count++;if(st.seen)b.seen++;b.got+=st.got;b.missed+=st.missed;b.interest+=st.interestScore;b.info+=st.informationScore;
+    c.content.interestVector.forEach(function(v){if(!vectors[v])vectors[v]={score:0,count:0};vectors[v].score+=st.interestScore;vectors[v].count++});
+    if(st.got+st.missed>0&&st.masteryScore<.45)[c.learningType,c.content.subtheme,c.learningValue.knowledgeRole].forEach(function(v){weak[v]=(weak[v]||0)+1});
+  });
+  Object.keys(by).forEach(function(k){var b=by[k];b.mastery=(b.got+b.missed)?b.got/(b.got+b.missed):0;b.avgInterest=b.interest/b.count;b.avgInfo=b.info/b.count});
+  return{
+    bySubject:by,
+    topVectors:Object.keys(vectors).map(function(k){return{name:k,score:vectors[k].score/vectors[k].count,count:vectors[k].count}}).sort(function(a,b){return b.score-a.score}).slice(0,12),
+    weakPatterns:Object.keys(weak).map(function(k){return{name:k,count:weak[k]}}).sort(function(a,b){return b.count-a.count}).slice(0,12)
+  };
+}
+function renderProfile(){
+  var p=profileData();
+  var vec=p.topVectors.map(function(v){return"<span class='chip'>"+v.name+" "+Math.round(v.score*100)+"%</span>"}).join("");
+  var weak=p.weakPatterns.map(function(v){return"<span class='chip'>"+v.name+" x"+v.count+"</span>"}).join("");
+  var rows=Object.keys(p.bySubject).map(function(k){
+    var b=p.bySubject[k];
+    return"<div class='panel'><h3>"+k+"</h3><p class='small'>Seen "+b.seen+"/100 · mastery "+Math.round(b.mastery*100)+"% · interest "+Math.round(b.avgInterest*100)+"% · info "+Math.round(b.avgInfo*100)+"%</p></div>";
+  }).join("");
+  E("profileBody").innerHTML="<div class='sect'>Content gravity</div>"+(vec||"<div class='small'>Study more first.</div>")+"<div class='sect'>Weak patterns</div>"+(weak||"<div class='small'>No weak patterns yet.</div>")+"<div class='sect'>Subjects</div>"+rows;
+  show("profile");
+}
+function exportText(){
+  var p=profileData();
+  var top=p.topVectors.slice(0,8).map(function(x){return x.name}).join(", ")||"not enough data";
+  var weak=p.weakPatterns.slice(0,8).map(function(x){return x.name}).join(", ")||"not enough data";
+  var subj=Object.keys(p.bySubject).map(function(k){return k+" mastery "+Math.round(p.bySubject[k].mastery*100)+"%"}).join("; ");
+  var instruction="Create or improve Study Deck cards using this profile. Keep 100 cards per subject, compatible with 15-17 card classes. Prioritize useful information over clever wording. Strong content gravity: "+top+". Weak patterns: "+weak+". Subject performance: "+subj+". Time data is low confidence because the user studies while working. Prefer concrete examples, context, mechanisms, and high retention value.";
+  var problems=CARDS.map(function(c){return{card:c,stats:cardState(c.id)}}).filter(function(x){return x.stats.seen>0}).sort(function(a,b){return(b.stats.missed-b.stats.got)-(a.stats.missed-a.stats.got)}).slice(0,25).map(function(x){return{id:x.card.id,subject:x.card.subject,question:x.card.q,answer:x.card.a,masteryScore:x.stats.masteryScore,missed:x.stats.missed,got:x.stats.got,learningType:x.card.learningType,content:x.card.content,learningValue:x.card.learningValue,feedback:x.stats.feedback}});
+  var obj={schema:"studydeck.github.v1",generatedAt:new Date().toISOString(),signalPolicy:{timeSignalWeight:TIME_WEIGHT,note:"Time is de-weighted because study often happens at work."},deck:{totalCards:CARDS.length,subjects:SUBJECTS.map(function(s){return{subject:s.subject,cards:100,classes:s.classIds.map(function(id){return CLASS_BY_ID[id].cardIds.length})}})},profile:p,problemCards:problems,nextDeckInstructions:instruction};
+  return"PASTE THIS INTO CHATGPT TO BUILD BETTER STUDY DECKS\n\n"+instruction+"\n\n--- RAW METADATA JSON ---\n"+JSON.stringify(obj,null,2);
+}
+function openExport(){E("exportBox").value=exportText();E("copyStatus").textContent="";show("export")}
+function copyExport(){E("exportBox").focus();E("exportBox").select();try{document.execCommand("copy");E("copyStatus").textContent="copied"}catch(e){E("copyStatus").textContent="Select all and copy manually."}}
+
+document.querySelectorAll(".feed").forEach(function(btn){btn.onclick=function(){feed(btn.getAttribute("data-feed"))}});
+E("backHome").onclick=function(){renderHome();show("home")};
+E("backClasses").onclick=function(){openSubject(session?session.subject:currentSubject)};
+E("profileBtn").onclick=renderProfile;
+E("exportBtn").onclick=openExport;
+E("profileBack").onclick=function(){renderHome();show("home")};
+E("exportBack").onclick=function(){renderHome();show("home")};
+E("refreshBtn").onclick=openExport;
+E("copyBtn").onclick=copyExport;
+
+try{renderHome();show("home")}catch(err){E("debug").textContent="Startup error: "+err.message}
+})();
+</script>
+</body>
+</html>
