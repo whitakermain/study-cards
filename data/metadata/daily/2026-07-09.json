@@ -1,0 +1,2535 @@
+{
+  "schema": "studydeck.v3.terms",
+  "generatedAt": "2026-07-10T01:33:03.959Z",
+  "deck": {
+    "subjects": 10,
+    "classes": 60,
+    "cards": 1000,
+    "keyTerms": 201
+  },
+  "profile": {
+    "cardStats": {},
+    "termProfile": {
+      "seen": 0,
+      "mastered": 0,
+      "shakyTerms": [],
+      "unclearTerms": [],
+      "termsBlockingCards": []
+    },
+    "practiceProfile": {},
+    "classes": [
+      {
+        "id": "optics_light_class_1",
+        "subject": "Optics & Light",
+        "title": "Seeing Begins With Light",
+        "phase": "learn",
+        "terms": [
+          "light",
+          "electromagnetic_radiation",
+          "source",
+          "surface",
+          "reflection"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "light",
+            "electromagnetic_radiation",
+            "source",
+            "surface",
+            "reflection"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "light",
+            "electromagnetic_radiation",
+            "source",
+            "surface",
+            "reflection",
+            "seeing_begins_with_light"
+          ]
+        }
+      },
+      {
+        "id": "optics_light_class_2",
+        "subject": "Optics & Light",
+        "title": "Light Changes Direction",
+        "phase": "learn",
+        "terms": [
+          "refraction",
+          "medium",
+          "refractive_index",
+          "snells_law",
+          "normal_line",
+          "lens"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "refraction",
+            "medium",
+            "refractive_index",
+            "snells_law",
+            "normal_line",
+            "lens"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "refraction",
+            "medium",
+            "refractive_index",
+            "snells_law",
+            "normal_line",
+            "lens",
+            "light_changes_direction"
+          ]
+        }
+      },
+      {
+        "id": "optics_light_class_3",
+        "subject": "Optics & Light",
+        "title": "Everyday Optical Effects",
+        "phase": "learn",
+        "terms": [
+          "scattering",
+          "rayleigh_scattering",
+          "wavelength",
+          "color",
+          "polarization",
+          "polarizer",
+          "glare"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "scattering",
+            "rayleigh_scattering",
+            "wavelength",
+            "color",
+            "polarization",
+            "polarizer",
+            "glare"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "scattering",
+            "rayleigh_scattering",
+            "wavelength",
+            "color",
+            "polarization",
+            "polarizer",
+            "glare",
+            "everyday_optical_effects"
+          ]
+        }
+      },
+      {
+        "id": "optics_light_class_4",
+        "subject": "Optics & Light",
+        "title": "Common Confusions in Light",
+        "phase": "learn",
+        "terms": [
+          "reflection",
+          "refraction",
+          "scattering",
+          "polarization",
+          "contrast"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "reflection",
+            "refraction",
+            "scattering",
+            "polarization",
+            "contrast"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "reflection",
+            "refraction",
+            "scattering",
+            "polarization",
+            "contrast",
+            "common_confusions_in_light"
+          ]
+        }
+      },
+      {
+        "id": "optics_light_class_5",
+        "subject": "Optics & Light",
+        "title": "Photography Use",
+        "phase": "learn",
+        "terms": [
+          "lens",
+          "focus",
+          "hard_light",
+          "soft_light",
+          "contrast",
+          "glare",
+          "polarizer"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "lens",
+            "focus",
+            "hard_light",
+            "soft_light",
+            "contrast",
+            "glare",
+            "polarizer"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "lens",
+            "focus",
+            "hard_light",
+            "soft_light",
+            "contrast",
+            "glare",
+            "polarizer",
+            "photography_use"
+          ]
+        }
+      },
+      {
+        "id": "optics_light_class_6",
+        "subject": "Optics & Light",
+        "title": "Optics Mastery",
+        "phase": "learn",
+        "terms": [
+          "light",
+          "reflection",
+          "refraction",
+          "scattering",
+          "polarization",
+          "lens",
+          "focus"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "light",
+            "reflection",
+            "refraction",
+            "scattering",
+            "polarization",
+            "lens",
+            "focus"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "light",
+            "reflection",
+            "refraction",
+            "scattering",
+            "polarization",
+            "lens",
+            "focus",
+            "optics_mastery"
+          ]
+        }
+      },
+      {
+        "id": "mathematics_class_1",
+        "subject": "Mathematics",
+        "title": "Math as Relationship",
+        "phase": "learn",
+        "terms": [
+          "quantity",
+          "relationship",
+          "ratio",
+          "proportion",
+          "formula",
+          "variable"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "quantity",
+            "relationship",
+            "ratio",
+            "proportion",
+            "formula",
+            "variable"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "quantity",
+            "relationship",
+            "ratio",
+            "proportion",
+            "formula",
+            "variable",
+            "math_as_relationship"
+          ]
+        }
+      },
+      {
+        "id": "mathematics_class_2",
+        "subject": "Mathematics",
+        "title": "Geometry and Space",
+        "phase": "learn",
+        "terms": [
+          "geometry",
+          "angle",
+          "right_triangle",
+          "hypotenuse",
+          "pythagorean_theorem",
+          "slope"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "geometry",
+            "angle",
+            "right_triangle",
+            "hypotenuse",
+            "pythagorean_theorem",
+            "slope"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "geometry",
+            "angle",
+            "right_triangle",
+            "hypotenuse",
+            "pythagorean_theorem",
+            "slope",
+            "geometry_and_space"
+          ]
+        }
+      },
+      {
+        "id": "mathematics_class_3",
+        "subject": "Mathematics",
+        "title": "Change and Curves",
+        "phase": "learn",
+        "terms": [
+          "slope",
+          "derivative",
+          "integral",
+          "quadratic",
+          "quadratic_formula",
+          "function_term"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "slope",
+            "derivative",
+            "integral",
+            "quadratic",
+            "quadratic_formula",
+            "function_term"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "slope",
+            "derivative",
+            "integral",
+            "quadratic",
+            "quadratic_formula",
+            "function_term",
+            "change_and_curves"
+          ]
+        }
+      },
+      {
+        "id": "mathematics_class_4",
+        "subject": "Mathematics",
+        "title": "Design Use",
+        "phase": "learn",
+        "terms": [
+          "proportion",
+          "golden_ratio",
+          "scale",
+          "geometry",
+          "slope"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "proportion",
+            "golden_ratio",
+            "scale",
+            "geometry",
+            "slope"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "proportion",
+            "golden_ratio",
+            "scale",
+            "geometry",
+            "slope",
+            "design_use"
+          ]
+        }
+      },
+      {
+        "id": "mathematics_class_5",
+        "subject": "Mathematics",
+        "title": "Common Math Mistakes",
+        "phase": "learn",
+        "terms": [
+          "formula",
+          "right_triangle",
+          "quadratic",
+          "derivative",
+          "golden_ratio",
+          "slope"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "formula",
+            "right_triangle",
+            "quadratic",
+            "derivative",
+            "golden_ratio",
+            "slope"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "formula",
+            "right_triangle",
+            "quadratic",
+            "derivative",
+            "golden_ratio",
+            "slope",
+            "common_math_mistakes"
+          ]
+        }
+      },
+      {
+        "id": "mathematics_class_6",
+        "subject": "Mathematics",
+        "title": "Math Mastery",
+        "phase": "learn",
+        "terms": [
+          "relationship",
+          "geometry",
+          "variable",
+          "derivative",
+          "proportion",
+          "scale"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "relationship",
+            "geometry",
+            "variable",
+            "derivative",
+            "proportion",
+            "scale"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "relationship",
+            "geometry",
+            "variable",
+            "derivative",
+            "proportion",
+            "scale",
+            "math_mastery"
+          ]
+        }
+      },
+      {
+        "id": "astronomy_class_1",
+        "subject": "Astronomy",
+        "title": "Scale and Location",
+        "phase": "learn",
+        "terms": [
+          "planet",
+          "star",
+          "solar_system",
+          "light_year",
+          "galaxy"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "planet",
+            "star",
+            "solar_system",
+            "light_year",
+            "galaxy"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "planet",
+            "star",
+            "solar_system",
+            "light_year",
+            "galaxy",
+            "scale_and_location"
+          ]
+        }
+      },
+      {
+        "id": "astronomy_class_2",
+        "subject": "Astronomy",
+        "title": "The Solar System as Structure",
+        "phase": "learn",
+        "terms": [
+          "solar_system",
+          "orbit",
+          "gravity",
+          "ellipse",
+          "keplers_first_law"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "solar_system",
+            "orbit",
+            "gravity",
+            "ellipse",
+            "keplers_first_law"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "solar_system",
+            "orbit",
+            "gravity",
+            "ellipse",
+            "keplers_first_law",
+            "the_solar_system_as_structure"
+          ]
+        }
+      },
+      {
+        "id": "astronomy_class_3",
+        "subject": "Astronomy",
+        "title": "Stars and Light",
+        "phase": "learn",
+        "terms": [
+          "star",
+          "fusion",
+          "main_sequence_star",
+          "light_year",
+          "brightness"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "star",
+            "fusion",
+            "main_sequence_star",
+            "light_year",
+            "brightness"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "star",
+            "fusion",
+            "main_sequence_star",
+            "light_year",
+            "brightness",
+            "stars_and_light"
+          ]
+        }
+      },
+      {
+        "id": "astronomy_class_4",
+        "subject": "Astronomy",
+        "title": "Motion in Space",
+        "phase": "learn",
+        "terms": [
+          "orbit",
+          "gravity",
+          "redshift",
+          "light_year",
+          "galaxy"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "orbit",
+            "gravity",
+            "redshift",
+            "light_year",
+            "galaxy"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "orbit",
+            "gravity",
+            "redshift",
+            "light_year",
+            "galaxy",
+            "motion_in_space"
+          ]
+        }
+      },
+      {
+        "id": "astronomy_class_5",
+        "subject": "Astronomy",
+        "title": "Human Observation",
+        "phase": "learn",
+        "terms": [
+          "telescope",
+          "observation",
+          "planet",
+          "keplers_first_law",
+          "redshift"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "telescope",
+            "observation",
+            "planet",
+            "keplers_first_law",
+            "redshift"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "telescope",
+            "observation",
+            "planet",
+            "keplers_first_law",
+            "redshift",
+            "human_observation"
+          ]
+        }
+      },
+      {
+        "id": "astronomy_class_6",
+        "subject": "Astronomy",
+        "title": "Astronomy Mastery",
+        "phase": "learn",
+        "terms": [
+          "solar_system",
+          "star",
+          "light_year",
+          "orbit",
+          "redshift",
+          "galaxy"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "solar_system",
+            "star",
+            "light_year",
+            "orbit",
+            "redshift",
+            "galaxy"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "solar_system",
+            "star",
+            "light_year",
+            "orbit",
+            "redshift",
+            "galaxy",
+            "astronomy_mastery"
+          ]
+        }
+      },
+      {
+        "id": "spanish_class_1",
+        "subject": "Spanish",
+        "title": "Survival Social Contact",
+        "phase": "learn",
+        "terms": [
+          "greeting",
+          "hola",
+          "como_estas",
+          "state",
+          "estar"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "greeting",
+            "hola",
+            "como_estas",
+            "state",
+            "estar"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "greeting",
+            "hola",
+            "como_estas",
+            "state",
+            "estar",
+            "survival_social_contact"
+          ]
+        }
+      },
+      {
+        "id": "spanish_class_2",
+        "subject": "Spanish",
+        "title": "Sentence Patterns",
+        "phase": "learn",
+        "terms": [
+          "verb",
+          "infinitive",
+          "conjugation",
+          "tengo_que",
+          "chunk"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "verb",
+            "infinitive",
+            "conjugation",
+            "tengo_que",
+            "chunk"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "verb",
+            "infinitive",
+            "conjugation",
+            "tengo_que",
+            "chunk",
+            "sentence_patterns"
+          ]
+        }
+      },
+      {
+        "id": "spanish_class_3",
+        "subject": "Spanish",
+        "title": "Real-World Use",
+        "phase": "learn",
+        "terms": [
+          "ser",
+          "estar",
+          "identity",
+          "state",
+          "por",
+          "para"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "ser",
+            "estar",
+            "identity",
+            "state",
+            "por",
+            "para"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "ser",
+            "estar",
+            "identity",
+            "state",
+            "por",
+            "para",
+            "real_world_use"
+          ]
+        }
+      },
+      {
+        "id": "spanish_class_4",
+        "subject": "Spanish",
+        "title": "Common Confusions",
+        "phase": "learn",
+        "terms": [
+          "ser",
+          "estar",
+          "por",
+          "para",
+          "word_order"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "ser",
+            "estar",
+            "por",
+            "para",
+            "word_order"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "ser",
+            "estar",
+            "por",
+            "para",
+            "word_order",
+            "common_confusions"
+          ]
+        }
+      },
+      {
+        "id": "spanish_class_5",
+        "subject": "Spanish",
+        "title": "Speaking Under Pressure",
+        "phase": "learn",
+        "terms": [
+          "hola",
+          "como_estas",
+          "tengo_que",
+          "infinitive",
+          "question_word"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "hola",
+            "como_estas",
+            "tengo_que",
+            "infinitive",
+            "question_word"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "hola",
+            "como_estas",
+            "tengo_que",
+            "infinitive",
+            "question_word",
+            "speaking_under_pressure"
+          ]
+        }
+      },
+      {
+        "id": "spanish_class_6",
+        "subject": "Spanish",
+        "title": "Spanish Mastery",
+        "phase": "learn",
+        "terms": [
+          "greeting",
+          "verb",
+          "ser",
+          "estar",
+          "por",
+          "para",
+          "chunk"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "greeting",
+            "verb",
+            "ser",
+            "estar",
+            "por",
+            "para",
+            "chunk"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "greeting",
+            "verb",
+            "ser",
+            "estar",
+            "por",
+            "para",
+            "chunk",
+            "spanish_mastery"
+          ]
+        }
+      },
+      {
+        "id": "latin_class_1",
+        "subject": "Latin",
+        "title": "Latin Meaning Comes From Form",
+        "phase": "learn",
+        "terms": [
+          "latin",
+          "case_term",
+          "inflection",
+          "word_order",
+          "puer",
+          "puella"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "latin",
+            "case_term",
+            "inflection",
+            "word_order",
+            "puer",
+            "puella"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "latin",
+            "case_term",
+            "inflection",
+            "word_order",
+            "puer",
+            "puella",
+            "latin_meaning_comes_from_form"
+          ]
+        }
+      },
+      {
+        "id": "latin_class_2",
+        "subject": "Latin",
+        "title": "Sentence Roles",
+        "phase": "learn",
+        "terms": [
+          "nominative",
+          "accusative",
+          "genitive",
+          "dative",
+          "ablative",
+          "vocative"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "nominative",
+            "accusative",
+            "genitive",
+            "dative",
+            "ablative",
+            "vocative"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "nominative",
+            "accusative",
+            "genitive",
+            "dative",
+            "ablative",
+            "vocative",
+            "sentence_roles"
+          ]
+        }
+      },
+      {
+        "id": "latin_class_3",
+        "subject": "Latin",
+        "title": "Verbs and Action",
+        "phase": "learn",
+        "terms": [
+          "verb",
+          "sum",
+          "amo",
+          "conjugation",
+          "participle"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "verb",
+            "sum",
+            "amo",
+            "conjugation",
+            "participle"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "verb",
+            "sum",
+            "amo",
+            "conjugation",
+            "participle",
+            "verbs_and_action"
+          ]
+        }
+      },
+      {
+        "id": "latin_class_4",
+        "subject": "Latin",
+        "title": "Translation Method",
+        "phase": "learn",
+        "terms": [
+          "case_term",
+          "word_order",
+          "puer",
+          "puella",
+          "ablative_absolute"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "case_term",
+            "word_order",
+            "puer",
+            "puella",
+            "ablative_absolute"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "case_term",
+            "word_order",
+            "puer",
+            "puella",
+            "ablative_absolute",
+            "translation_method"
+          ]
+        }
+      },
+      {
+        "id": "latin_class_5",
+        "subject": "Latin",
+        "title": "Roman Cultural Memory",
+        "phase": "learn",
+        "terms": [
+          "carpe_diem",
+          "latin",
+          "sum",
+          "declension",
+          "inflection"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "carpe_diem",
+            "latin",
+            "sum",
+            "declension",
+            "inflection"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "carpe_diem",
+            "latin",
+            "sum",
+            "declension",
+            "inflection",
+            "roman_cultural_memory"
+          ]
+        }
+      },
+      {
+        "id": "latin_class_6",
+        "subject": "Latin",
+        "title": "Latin Mastery",
+        "phase": "learn",
+        "terms": [
+          "case_term",
+          "nominative",
+          "accusative",
+          "sum",
+          "amo",
+          "ablative_absolute"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "case_term",
+            "nominative",
+            "accusative",
+            "sum",
+            "amo",
+            "ablative_absolute"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "case_term",
+            "nominative",
+            "accusative",
+            "sum",
+            "amo",
+            "ablative_absolute",
+            "latin_mastery"
+          ]
+        }
+      },
+      {
+        "id": "cuneiform_class_1",
+        "subject": "Cuneiform",
+        "title": "Writing Begins as Material Technology",
+        "phase": "learn",
+        "terms": [
+          "cuneiform",
+          "wedge",
+          "clay_tablet",
+          "reed_stylus",
+          "sumer"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "cuneiform",
+            "wedge",
+            "clay_tablet",
+            "reed_stylus",
+            "sumer"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "cuneiform",
+            "wedge",
+            "clay_tablet",
+            "reed_stylus",
+            "sumer",
+            "writing_begins_as_material_technology"
+          ]
+        }
+      },
+      {
+        "id": "cuneiform_class_2",
+        "subject": "Cuneiform",
+        "title": "Clay, Tool, and Gesture",
+        "phase": "learn",
+        "terms": [
+          "reed_stylus",
+          "wedge",
+          "clay_tablet",
+          "script",
+          "mesopotamia"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "reed_stylus",
+            "wedge",
+            "clay_tablet",
+            "script",
+            "mesopotamia"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "reed_stylus",
+            "wedge",
+            "clay_tablet",
+            "script",
+            "mesopotamia",
+            "clay_tool_and_gesture"
+          ]
+        }
+      },
+      {
+        "id": "cuneiform_class_3",
+        "subject": "Cuneiform",
+        "title": "Writing as Civilization",
+        "phase": "learn",
+        "terms": [
+          "administration",
+          "scribe",
+          "sumer",
+          "script",
+          "language"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "administration",
+            "scribe",
+            "sumer",
+            "script",
+            "language"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "administration",
+            "scribe",
+            "sumer",
+            "script",
+            "language",
+            "writing_as_civilization"
+          ]
+        }
+      },
+      {
+        "id": "cuneiform_class_4",
+        "subject": "Cuneiform",
+        "title": "Common Confusions",
+        "phase": "learn",
+        "terms": [
+          "script",
+          "language",
+          "logo_syllabic",
+          "logogram",
+          "syllabogram",
+          "determinative"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "script",
+            "language",
+            "logo_syllabic",
+            "logogram",
+            "syllabogram",
+            "determinative"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "script",
+            "language",
+            "logo_syllabic",
+            "logogram",
+            "syllabogram",
+            "determinative",
+            "common_confusions"
+          ]
+        }
+      },
+      {
+        "id": "cuneiform_class_5",
+        "subject": "Cuneiform",
+        "title": "Field / Archaeology Use",
+        "phase": "learn",
+        "terms": [
+          "clay_tablet",
+          "reed_stylus",
+          "decipherment",
+          "code_hammurabi",
+          "gilgamesh"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "clay_tablet",
+            "reed_stylus",
+            "decipherment",
+            "code_hammurabi",
+            "gilgamesh"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "clay_tablet",
+            "reed_stylus",
+            "decipherment",
+            "code_hammurabi",
+            "gilgamesh",
+            "field_archaeology_use"
+          ]
+        }
+      },
+      {
+        "id": "cuneiform_class_6",
+        "subject": "Cuneiform",
+        "title": "Cuneiform Mastery",
+        "phase": "learn",
+        "terms": [
+          "cuneiform",
+          "script",
+          "language",
+          "administration",
+          "scribe",
+          "logo_syllabic"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "cuneiform",
+            "script",
+            "language",
+            "administration",
+            "scribe",
+            "logo_syllabic"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "cuneiform",
+            "script",
+            "language",
+            "administration",
+            "scribe",
+            "logo_syllabic",
+            "cuneiform_mastery"
+          ]
+        }
+      },
+      {
+        "id": "history_class_1",
+        "subject": "History",
+        "title": "World History as Connection and Collapse",
+        "phase": "learn",
+        "terms": [
+          "history",
+          "event",
+          "process",
+          "cause",
+          "consequence",
+          "rome"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "history",
+            "event",
+            "process",
+            "cause",
+            "consequence",
+            "rome"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "history",
+            "event",
+            "process",
+            "cause",
+            "consequence",
+            "rome",
+            "world_history_as_connection_and_collapse"
+          ]
+        }
+      },
+      {
+        "id": "history_class_2",
+        "subject": "History",
+        "title": "Empire and Power",
+        "phase": "learn",
+        "terms": [
+          "empire",
+          "state_power",
+          "western_roman_empire",
+          "mongols",
+          "genghis_khan"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "empire",
+            "state_power",
+            "western_roman_empire",
+            "mongols",
+            "genghis_khan"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "empire",
+            "state_power",
+            "western_roman_empire",
+            "mongols",
+            "genghis_khan",
+            "empire_and_power"
+          ]
+        }
+      },
+      {
+        "id": "history_class_3",
+        "subject": "History",
+        "title": "Trade and Movement",
+        "phase": "learn",
+        "terms": [
+          "silk_road",
+          "trade_route",
+          "eurasia",
+          "pax_mongolica",
+          "relay_network"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "silk_road",
+            "trade_route",
+            "eurasia",
+            "pax_mongolica",
+            "relay_network"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "silk_road",
+            "trade_route",
+            "eurasia",
+            "pax_mongolica",
+            "relay_network",
+            "trade_and_movement"
+          ]
+        }
+      },
+      {
+        "id": "history_class_4",
+        "subject": "History",
+        "title": "Cause and Consequence",
+        "phase": "learn",
+        "terms": [
+          "cause",
+          "consequence",
+          "columbian_exchange",
+          "tribute",
+          "process"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "cause",
+            "consequence",
+            "columbian_exchange",
+            "tribute",
+            "process"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "cause",
+            "consequence",
+            "columbian_exchange",
+            "tribute",
+            "process",
+            "cause_and_consequence"
+          ]
+        }
+      },
+      {
+        "id": "history_class_5",
+        "subject": "History",
+        "title": "Common History Mistakes",
+        "phase": "learn",
+        "terms": [
+          "event",
+          "process",
+          "pax_mongolica",
+          "silk_road",
+          "empire"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "event",
+            "process",
+            "pax_mongolica",
+            "silk_road",
+            "empire"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "event",
+            "process",
+            "pax_mongolica",
+            "silk_road",
+            "empire",
+            "common_history_mistakes"
+          ]
+        }
+      },
+      {
+        "id": "history_class_6",
+        "subject": "History",
+        "title": "History Mastery",
+        "phase": "learn",
+        "terms": [
+          "empire",
+          "trade_route",
+          "process",
+          "columbian_exchange",
+          "pax_mongolica"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "empire",
+            "trade_route",
+            "process",
+            "columbian_exchange",
+            "pax_mongolica"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "empire",
+            "trade_route",
+            "process",
+            "columbian_exchange",
+            "pax_mongolica",
+            "history_mastery"
+          ]
+        }
+      },
+      {
+        "id": "philosophy_class_1",
+        "subject": "Philosophy",
+        "title": "Philosophy as Clarifying Questions",
+        "phase": "learn",
+        "terms": [
+          "philosophy",
+          "argument",
+          "premise",
+          "conclusion",
+          "epistemology"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "philosophy",
+            "argument",
+            "premise",
+            "conclusion",
+            "epistemology"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "philosophy",
+            "argument",
+            "premise",
+            "conclusion",
+            "epistemology",
+            "philosophy_as_clarifying_questions"
+          ]
+        }
+      },
+      {
+        "id": "philosophy_class_2",
+        "subject": "Philosophy",
+        "title": "Knowledge and Reality",
+        "phase": "learn",
+        "terms": [
+          "epistemology",
+          "knowledge",
+          "belief",
+          "plato",
+          "form_plato",
+          "appearance",
+          "reality"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "epistemology",
+            "knowledge",
+            "belief",
+            "plato",
+            "form_plato",
+            "appearance",
+            "reality"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "epistemology",
+            "knowledge",
+            "belief",
+            "plato",
+            "form_plato",
+            "appearance",
+            "reality",
+            "knowledge_and_reality"
+          ]
+        }
+      },
+      {
+        "id": "philosophy_class_3",
+        "subject": "Philosophy",
+        "title": "Ethics and Character",
+        "phase": "learn",
+        "terms": [
+          "ethics",
+          "virtue",
+          "virtue_ethics",
+          "aristotle",
+          "flourishing"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "ethics",
+            "virtue",
+            "virtue_ethics",
+            "aristotle",
+            "flourishing"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "ethics",
+            "virtue",
+            "virtue_ethics",
+            "aristotle",
+            "flourishing",
+            "ethics_and_character"
+          ]
+        }
+      },
+      {
+        "id": "philosophy_class_4",
+        "subject": "Philosophy",
+        "title": "Thinking Clearly",
+        "phase": "learn",
+        "terms": [
+          "argument",
+          "premise",
+          "conclusion",
+          "occams_razor",
+          "knowledge"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "argument",
+            "premise",
+            "conclusion",
+            "occams_razor",
+            "knowledge"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "argument",
+            "premise",
+            "conclusion",
+            "occams_razor",
+            "knowledge",
+            "thinking_clearly"
+          ]
+        }
+      },
+      {
+        "id": "philosophy_class_5",
+        "subject": "Philosophy",
+        "title": "Life Use",
+        "phase": "learn",
+        "terms": [
+          "ethics",
+          "knowledge",
+          "belief",
+          "virtue",
+          "occams_razor"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "ethics",
+            "knowledge",
+            "belief",
+            "virtue",
+            "occams_razor"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "ethics",
+            "knowledge",
+            "belief",
+            "virtue",
+            "occams_razor",
+            "life_use"
+          ]
+        }
+      },
+      {
+        "id": "philosophy_class_6",
+        "subject": "Philosophy",
+        "title": "Philosophy Mastery",
+        "phase": "learn",
+        "terms": [
+          "philosophy",
+          "epistemology",
+          "ethics",
+          "plato",
+          "aristotle",
+          "occams_razor"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "philosophy",
+            "epistemology",
+            "ethics",
+            "plato",
+            "aristotle",
+            "occams_razor"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "philosophy",
+            "epistemology",
+            "ethics",
+            "plato",
+            "aristotle",
+            "occams_razor",
+            "philosophy_mastery"
+          ]
+        }
+      },
+      {
+        "id": "architecture_class_1",
+        "subject": "Architecture",
+        "title": "Architecture Solves Human Problems",
+        "phase": "learn",
+        "terms": [
+          "architecture",
+          "building",
+          "space",
+          "vitruvius",
+          "firmitas",
+          "utilitas",
+          "venustas"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "architecture",
+            "building",
+            "space",
+            "vitruvius",
+            "firmitas",
+            "utilitas",
+            "venustas"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "architecture",
+            "building",
+            "space",
+            "vitruvius",
+            "firmitas",
+            "utilitas",
+            "venustas",
+            "architecture_solves_human_problems"
+          ]
+        }
+      },
+      {
+        "id": "architecture_class_2",
+        "subject": "Architecture",
+        "title": "Structure and Force",
+        "phase": "learn",
+        "terms": [
+          "structure_arch",
+          "load",
+          "compression",
+          "tension",
+          "thrust",
+          "column",
+          "beam",
+          "arch"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "structure_arch",
+            "load",
+            "compression",
+            "tension",
+            "thrust",
+            "column",
+            "beam",
+            "arch"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "structure_arch",
+            "load",
+            "compression",
+            "tension",
+            "thrust",
+            "column",
+            "beam",
+            "arch",
+            "structure_and_force"
+          ]
+        }
+      },
+      {
+        "id": "architecture_class_3",
+        "subject": "Architecture",
+        "title": "Material Intelligence",
+        "phase": "learn",
+        "terms": [
+          "vault",
+          "dome",
+          "roman_concrete",
+          "pantheon",
+          "oculus",
+          "brunelleschi"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "vault",
+            "dome",
+            "roman_concrete",
+            "pantheon",
+            "oculus",
+            "brunelleschi"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "vault",
+            "dome",
+            "roman_concrete",
+            "pantheon",
+            "oculus",
+            "brunelleschi",
+            "material_intelligence"
+          ]
+        }
+      },
+      {
+        "id": "architecture_class_4",
+        "subject": "Architecture",
+        "title": "Beauty, Meaning, and Style",
+        "phase": "learn",
+        "terms": [
+          "gothic_architecture",
+          "pointed_arch",
+          "ribbed_vault",
+          "flying_buttress",
+          "clerestory",
+          "venustas"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "gothic_architecture",
+            "pointed_arch",
+            "ribbed_vault",
+            "flying_buttress",
+            "clerestory",
+            "venustas"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "gothic_architecture",
+            "pointed_arch",
+            "ribbed_vault",
+            "flying_buttress",
+            "clerestory",
+            "venustas",
+            "beauty_meaning_and_style"
+          ]
+        }
+      },
+      {
+        "id": "architecture_class_5",
+        "subject": "Architecture",
+        "title": "Field Observation",
+        "phase": "learn",
+        "terms": [
+          "facade",
+          "plan",
+          "section",
+          "adaptive_reuse",
+          "style_art",
+          "structure_arch"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "facade",
+            "plan",
+            "section",
+            "adaptive_reuse",
+            "style_art",
+            "structure_arch"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "facade",
+            "plan",
+            "section",
+            "adaptive_reuse",
+            "style_art",
+            "structure_arch",
+            "field_observation"
+          ]
+        }
+      },
+      {
+        "id": "architecture_class_6",
+        "subject": "Architecture",
+        "title": "Architecture Mastery",
+        "phase": "learn",
+        "terms": [
+          "architecture",
+          "structure_arch",
+          "material",
+          "vitruvius",
+          "adaptive_reuse",
+          "flying_buttress"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "architecture",
+            "structure_arch",
+            "material",
+            "vitruvius",
+            "adaptive_reuse",
+            "flying_buttress"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "architecture",
+            "structure_arch",
+            "material",
+            "vitruvius",
+            "adaptive_reuse",
+            "flying_buttress",
+            "architecture_mastery"
+          ]
+        }
+      },
+      {
+        "id": "art_history_class_1",
+        "subject": "Art History",
+        "title": "How to Look",
+        "phase": "learn",
+        "terms": [
+          "art_history",
+          "artwork",
+          "style_art",
+          "evidence",
+          "renaissance"
+        ],
+        "practice": {
+          "cumulativeLevel": 1,
+          "linkedConcepts": [
+            "art_history",
+            "artwork",
+            "style_art",
+            "evidence",
+            "renaissance"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "art_history",
+            "artwork",
+            "style_art",
+            "evidence",
+            "renaissance",
+            "how_to_look"
+          ]
+        }
+      },
+      {
+        "id": "art_history_class_2",
+        "subject": "Art History",
+        "title": "Light and Form",
+        "phase": "learn",
+        "terms": [
+          "chiaroscuro",
+          "sfumato",
+          "leonardo",
+          "mona_lisa",
+          "naturalism"
+        ],
+        "practice": {
+          "cumulativeLevel": 2,
+          "linkedConcepts": [
+            "chiaroscuro",
+            "sfumato",
+            "leonardo",
+            "mona_lisa",
+            "naturalism"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "chiaroscuro",
+            "sfumato",
+            "leonardo",
+            "mona_lisa",
+            "naturalism",
+            "light_and_form"
+          ]
+        }
+      },
+      {
+        "id": "art_history_class_3",
+        "subject": "Art History",
+        "title": "Style and Evidence",
+        "phase": "learn",
+        "terms": [
+          "perspective",
+          "vanishing_point",
+          "anatomy",
+          "renaissance",
+          "impressionism",
+          "brushwork"
+        ],
+        "practice": {
+          "cumulativeLevel": 3,
+          "linkedConcepts": [
+            "perspective",
+            "vanishing_point",
+            "anatomy",
+            "renaissance",
+            "impressionism",
+            "brushwork"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "perspective",
+            "vanishing_point",
+            "anatomy",
+            "renaissance",
+            "impressionism",
+            "brushwork",
+            "style_and_evidence"
+          ]
+        }
+      },
+      {
+        "id": "art_history_class_4",
+        "subject": "Art History",
+        "title": "Artist, Viewer, and Patron",
+        "phase": "learn",
+        "terms": [
+          "patron",
+          "patronage",
+          "commission",
+          "leonardo",
+          "artwork"
+        ],
+        "practice": {
+          "cumulativeLevel": 4,
+          "linkedConcepts": [
+            "patron",
+            "patronage",
+            "commission",
+            "leonardo",
+            "artwork"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "patron",
+            "patronage",
+            "commission",
+            "leonardo",
+            "artwork",
+            "artist_viewer_and_patron"
+          ]
+        }
+      },
+      {
+        "id": "art_history_class_5",
+        "subject": "Art History",
+        "title": "Common Mistakes",
+        "phase": "learn",
+        "terms": [
+          "impressionism",
+          "baroque",
+          "tenebrism",
+          "modernism",
+          "abstraction"
+        ],
+        "practice": {
+          "cumulativeLevel": 5,
+          "linkedConcepts": [
+            "impressionism",
+            "baroque",
+            "tenebrism",
+            "modernism",
+            "abstraction"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "impressionism",
+            "baroque",
+            "tenebrism",
+            "modernism",
+            "abstraction",
+            "common_mistakes"
+          ]
+        }
+      },
+      {
+        "id": "art_history_class_6",
+        "subject": "Art History",
+        "title": "Art History Mastery",
+        "phase": "learn",
+        "terms": [
+          "art_history",
+          "evidence",
+          "style_art",
+          "chiaroscuro",
+          "patronage",
+          "renaissance"
+        ],
+        "practice": {
+          "cumulativeLevel": 6,
+          "linkedConcepts": [
+            "art_history",
+            "evidence",
+            "style_art",
+            "chiaroscuro",
+            "patronage",
+            "renaissance"
+          ],
+          "practiceSkills": [
+            "compression",
+            "recognition",
+            "confusionControl",
+            "connection",
+            "fieldUse",
+            "synthesis",
+            "transfer"
+          ],
+          "exportTags": [
+            "art_history",
+            "evidence",
+            "style_art",
+            "chiaroscuro",
+            "patronage",
+            "renaissance",
+            "art_history_mastery"
+          ]
+        }
+      }
+    ]
+  },
+  "improvementDirectives": [
+    "Keep just-in-time key-term scaffolding: new term = definition only, next main-card reappearance = multiple choice, later main-card reappearances = typed recall."
+  ],
+  "nextDeckInstructions": "Use this metadata to improve definitions, reduce jargon, and add prerequisite term cards before synthesis cards."
+}
